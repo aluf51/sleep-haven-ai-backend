@@ -1,5 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const User = require('../models/User'); // or the correct filename
+const User = require('../models/User'); // Updated path
 
 
 /**
