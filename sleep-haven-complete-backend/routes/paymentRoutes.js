@@ -1,10 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { createCheckoutSession, verifyPayment } = require('../controllers/paymentController');
-const { protect } = require('../middleware/auth');
+const { protect } = require('../middleware/authMiddleware');
+const { 
+  createCheckoutSession, 
+  verifyPayment,
+  createGuestCheckoutSession
+} = require('../controllers/paymentController');
 
-// All routes are protected
+// Protected routes (require authentication)
 router.post('/create-checkout-session', protect, createCheckoutSession);
 router.get('/verify-payment/:sessionId', protect, verifyPayment);
+
+// Public route for guest checkout (no authentication required)
+router.post('/guest-checkout', createGuestCheckoutSession);
 
 module.exports = router;
