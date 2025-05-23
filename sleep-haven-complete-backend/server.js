@@ -26,6 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/sleep-plans', require('./routes/sleepPlanRoutes'));
 app.use('/api/margaret', require('./routes/margaretRoutes'));
+app.use('/api/payments', require('./routes/paymentRoutes'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
