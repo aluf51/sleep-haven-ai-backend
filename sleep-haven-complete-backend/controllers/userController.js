@@ -1,4 +1,4 @@
-const User = require('../models/userModel');
+const User = require('../models/User'); // or the correct filename
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
