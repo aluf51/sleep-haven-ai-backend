@@ -7,7 +7,7 @@ const {
   getUserProfile, 
   updateUserProfile 
 } = require('../controllers/userController');
-const { protect } = require('../middleware/authMiddleware');
+const { protect } = require('../middleware/auth'); // Updated path
 
 // Public routes
 router.post('/register', registerUser);
@@ -19,3 +19,4 @@ router.get('/profile', protect, getUserProfile);
 router.put('/profile', protect, updateUserProfile);
 
 module.exports = router;
+
